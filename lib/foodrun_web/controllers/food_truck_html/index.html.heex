@@ -1,0 +1,21 @@
+<.header>Food Trucks</.header>
+
+<.search search_term={@search_term} />
+
+<.table id="food_trucks" rows={@food_trucks}>
+  <:col :let={food_truck} label="Truck">
+    <span class="text-nowrap"><%= food_truck.name %></span>
+    <br />
+    <span class="font-normal"><%= food_truck.address %></span>
+  </:col>
+
+  <:col :let={food_truck} label="Menu"><%= food_truck.menu %></:col>
+
+  <:action :let={food_truck}>
+    Schedule
+    <.link href={food_truck.schedule_url} download target="_blank">
+      <span class="sr-only">Download</span>
+      <.icon name="hero-arrow-down-circle-solid" class="h-4 w-4" />
+    </.link>
+  </:action>
+</.table>

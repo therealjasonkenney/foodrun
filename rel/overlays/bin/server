@@ -1,0 +1,7 @@
+#!/bin/sh
+set -eu
+
+cd -P -- "$(dirname -- "$0")"
+
+echo "Starting server"
+PHX_SERVER=true exec ./foodrun start

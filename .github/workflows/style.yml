@@ -1,0 +1,79 @@
+name: Enforce Style
+
+# This job can be triggered manually or it gets called
+# by the publish workflow.
+on:
+  - workflow_dispatch
+  - push
+
+env:
+  MIX_ENV: test
+
+jobs:
+  tests:
+
+    # Sets the permissions granted to the
+    # `GITHUB_TOKEN` for the actions in this job.
+    permissions:
+      contents: read
+
+    runs-on: ubuntu-22.04
+    name: Style check on OTP ${{matrix.otp}} / Elixir ${{matrix.elixir}}
+    strategy:
+
+      # Specify the OTP and Elixir versions to use when building
+      # and running the workflow steps.
+      matrix:
+        otp: ["27"] # Define the OTP version [required]
+        elixir: ["1.17.3"] # Define the elixir version [required]
+
+    steps:
+
+      - name: Set up Elixir
+        uses: erlef/setup-beam@v1
+        with:
+          otp-version: ${{matrix.otp}}
+          elixir-version: ${{matrix.elixir}}
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Cache dependencies
+        id: cache-deps
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-elixir-deps
+        with:
+          path: deps
+          key: ${{ runner.os }}-mix-${{ env.cache-name }}-${{ hashFiles('**/mix.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-mix-${{ env.cache-name }}-
+
+      # Elixir can handle faster compilation by
+      # using prior cached builds and just changing what it needs
+      # to.
+      - name: Cache compiled build
+        id: cache-build
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-compiled-build
+        with:
+          path: _build
+          key: ${{ runner.os }}-mix-${{ env.cache-name }}-${{ hashFiles('**/mix.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-mix-${{ env.cache-name }}-
+            ${{ runner.os }}-mix-
+
+      - name: Clean cache to rule out incremental build as a source of flakiness
+        if: github.run_attempt != '1'
+        run: |
+          mix deps.clean --all
+          mix clean
+        shell: sh
+
+      # Normally cached.
+      - name: Install dependencies
+        run: mix deps.get
+
+      - name: Check formatting
+        run: mix format --check-formatted
