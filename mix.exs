@@ -4,13 +4,23 @@ defmodule Foodrun.MixProject do
   def project do
     [
       app: :foodrun,
-      version: "0.1.0",
+      version: "1.0.0",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       test_coverage: [ignore_modules: no_cov()],
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+
+      # Docs
+      name: "Foodrun",
+      source_url: "https://github.com/therealjasonkenney/foodrun",
+      homepage_url: "https://therealjasonkenney.github.io/foodrun",
+      docs: [
+        # The main page in the docs
+        main: "Foodrun",
+        output: "./docs"
+      ]
     ]
   end
 
@@ -46,7 +56,8 @@ defmodule Foodrun.MixProject do
   defp ci_deps() do
     [
       # Audit dependencies for security vulnerabilities.
-      {:mix_audit, "~> 2.1", only: [:dev, :test], runtime: false}
+      {:mix_audit, "~> 2.1", only: [:dev, :test], runtime: false},
+      {:ex_doc, "~> 0.34", only: :dev, runtime: false}
     ]
   end
 
