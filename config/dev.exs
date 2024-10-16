@@ -70,10 +70,10 @@ config :foodrun, :san_fran_import,
   run_at_startup: true
 
 # Use specific geo information (for now)
-config :foodrun, Foodrun.FoodTrucks,
-  maximum_meters: 3000,
-  maximum_truckage: 1,
-  office: {"-122.38453073422282", "37.755030726766726"}
+config :foodrun, Foodrun.FoodTruckSearches,
+  max_distance_meters: 3000.0,
+  max_trucks_shown: 100,
+  origin: {-122.38453073422282, 37.755030726766726}
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

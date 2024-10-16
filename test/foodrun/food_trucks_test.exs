@@ -2,6 +2,7 @@ defmodule Foodrun.FoodTrucksTest do
   use Foodrun.DataCase
 
   alias Foodrun.FoodTrucks
+  alias Foodrun.FoodTruckSearches
 
   describe "food_trucks" do
     import Foodrun.FoodTrucksFixtures
@@ -29,28 +30,12 @@ defmodule Foodrun.FoodTrucksTest do
       assert received_changeset == expected_changeset
     end
 
-    test "list_food_trucks/0 returns food_trucks within configured meters" do
-      food_truck = food_truck_fixture()
-      assert FoodTrucks.list_food_trucks() == [food_truck]
-    end
-
-    test "list_food_trucks/0 will not return out of range trucks." do
-      food_truck_fixture(%{lat: 0})
-      assert FoodTrucks.list_food_trucks() == []
-    end
-
-    # Because this relies on an index, we can't test this properly with sandbox for when
-    # matching results appear, So we only have one for when none appear.
-    test "search_food_trucks/1 does not return food trucks when none have burgers" do
-      assert FoodTrucks.search_food_trucks("ketchup burgers") == []
-    end
-
     test "import_food_trucks!/1 imports food trucks, but does not allow duplicates." do
       external_id = System.unique_integer([:positive])
 
       # Make sure no side effects are mucking this db up.
       0 =
-        FoodTrucks.list_food_trucks()
+        FoodTruckSearches.list_food_trucks()
         |> length()
 
       :ok =
@@ -60,7 +45,7 @@ defmodule Foodrun.FoodTrucksTest do
         |> FoodTrucks.import_food_trucks()
 
       count =
-        FoodTrucks.list_food_trucks()
+        FoodTruckSearches.list_food_trucks()
         |> length()
 
       assert count === 1

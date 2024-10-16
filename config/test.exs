@@ -38,7 +38,7 @@ config :phoenix_live_view,
 
 # Configure the test suite to use specific geo information
 # for test stability.
-config :foodrun, Foodrun.FoodTrucks,
-  maximum_meters: 3000,
-  maximum_truckage: 1,
-  office: {"-122.38453073422282", "37.755030726766726"}
+config :foodrun, Foodrun.FoodTruckSearches,
+  max_distance_meters: 3000.0,
+  max_trucks_shown: 1,
+  origin: {-122.38453073422282, 37.755030726766726}

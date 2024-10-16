@@ -3,13 +3,13 @@ defmodule Foodrun.FoodTrucks do
   The FoodTrucks context.
   """
 
+  import Ecto.Query, warn: false
+
   require Logger
 
-  import Ecto.Query, warn: false
   alias Foodrun.Repo
 
   alias Foodrun.FoodTrucks.FoodTruck
-  alias Foodrun.FoodTrucks.SearchQuery
 
   @doc false
   # This is just used for fixtures in the test() environment.
@@ -20,21 +20,6 @@ defmodule Foodrun.FoodTrucks do
 
   def decode!(stream, :san_fran) do
     Foodrun.FoodTrucks.SanFran.decode!(stream)
-  end
-
-  @doc """
-  Returns the list of food_trucks.
-
-  ## Examples
-
-      iex> list_food_trucks()
-      [%FoodTruck{}, ...]
-
-  """
-  def list_food_trucks do
-    SearchQuery.active_and_near(config())
-    |> SearchQuery.sort_by_name()
-    |> Repo.all()
   end
 
   @doc """
@@ -63,28 +48,8 @@ defmodule Foodrun.FoodTrucks do
     :ok
   end
 
-  @doc """
-  Searches food trucks and orders them by rank.
-  """
-  def search_food_trucks(search_term) do
-    SearchQuery.active_and_near(config())
-    |> SearchQuery.filter_by_search_term(search_term)
-    |> SearchQuery.sort_by_search_ranking(search_term)
-    |> Repo.all()
-  end
-
-  defp config() do
-    config = Application.get_env(:foodrun, __MODULE__)
-
-    %{
-      maximum_meters: config[:maximum_meters],
-      maximum_truckage: config[:maximum_truckage],
-      office: config[:office]
-    }
-  end
-
   defp deactivate_all() do
-    SearchQuery.active()
+    from(f in FoodTruck, where: f.active == true)
     |> Repo.update_all(set: [active: false])
   end
 
