@@ -8,7 +8,7 @@
     <meta name="project" content="Foodrun v1.0.0">
 
 
-    <title>Foodrun.Imports.ImportTask — Foodrun v1.0.0</title>
+    <title>Foodrun.Postgis — Foodrun v1.0.0</title>
     <link rel="stylesheet" href="dist/html-elixir-F2VRIOKR.css" />
 
 
@@ -112,16 +112,26 @@ Pages
 <div id="top-content">
   <h1>
 
-      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/imports/import_task.ex#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/postgis.ex#L1" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
 
-    <span translate="no">Foodrun.Imports.ImportTask</span> 
+    <span translate="no">Foodrun.Postgis</span> 
     <small class="app-vsn" translate="no">(Foodrun v1.0.0)</small>
 
   </h1>
 
+
+    <section id="moduledoc">
+<h2 id="module-ecto-macros-for-postgis-functions-we-use" class="section-heading">
+  <a href="#module-ecto-macros-for-postgis-functions-we-use" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Ecto macros for postgis functions we use.</span>
+</h2>
+
+    </section>
 
 </div>
 
@@ -132,6 +142,22 @@ Pages
       </a>
       <span class="text">Summary</span>
     </h1>
+<div class="summary-types summary">
+  <h2>
+    <a href="#types">Types</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:geo_point/0" data-no-tooltip translate="no">geo_point()</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>An point consisting of longitude,latitude.</p></div>
+
+    </div>
+
+</div>
 <div class="summary-functions summary">
   <h2>
     <a href="#functions">Functions</a>
@@ -139,17 +165,26 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#child_spec/1" data-no-tooltip translate="no">child_spec(init_arg)</a>
+        <a href="#distance_between/2" data-no-tooltip translate="no">distance_between(geo_one, geo_two)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns a specification to start this module under a supervisor.</p></div>
+        <div class="summary-synopsis"><p>Calculates the distance in meters between the column in the table and a long,lat point
+given.</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#start_link/1" data-no-tooltip translate="no">start_link(opts)</a>
+        <a href="#distance_within/3" data-no-tooltip translate="no">distance_within(geo_one, geo_two, distance)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#geo_point/2" data-no-tooltip translate="no">geo_point(long, lat)</a>
 
       </div>
 
@@ -160,24 +195,24 @@ Pages
   </section>
 
 
-  <section id="functions" class="details-list">
+  <section id="types" class="details-list">
     <h1 class="section-heading">
-      <a class="hover-link" href="#functions">
+      <a class="hover-link" href="#types">
         <i class="ri-link-m" aria-hidden="true"></i>
       </a>
-      <span class="text">Functions</span>
+      <span class="text">Types</span>
     </h1>
-    <div class="functions-list">
-<section class="detail" id="child_spec/1">
+    <div class="types-list">
+<section class="detail" id="t:geo_point/0">
 
   <div class="detail-header">
-    <a href="#child_spec/1" class="detail-link" data-no-tooltip title="Link to this function">
+    <a href="#t:geo_point/0" class="detail-link" data-no-tooltip title="Link to this type">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
+      <span class="sr-only">Link to this type</span>
     </a>
-    <h1 class="signature" translate="no">child_spec(init_arg)</h1>
+    <h1 class="signature" translate="no">geo_point()</h1>
 
-      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/imports/import_task.ex#L4" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/postgis.ex#L7" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -187,23 +222,92 @@ Pages
 
   <section class="docstring">
 
-<p>Returns a specification to start this module under a supervisor.</p><p>See <a href="https://hexdocs.pm/elixir/Supervisor.html"><code class="inline">Supervisor</code></a>.</p>
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> geo_point() :: {<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">float</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">float</a>()}</pre>
+
+      </div>
+
+<p>An point consisting of longitude,latitude.</p>
   </section>
 </section>
-<section class="detail" id="start_link/1">
+
+    </div>
+  </section>
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Functions</span>
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="distance_between/2">
 
   <div class="detail-header">
-    <a href="#start_link/1" class="detail-link" data-no-tooltip title="Link to this function">
+    <a href="#distance_between/2" class="detail-link" data-no-tooltip title="Link to this macro">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
+      <span class="sr-only">Link to this macro</span>
     </a>
-    <h1 class="signature" translate="no">start_link(opts)</h1>
+    <h1 class="signature" translate="no">distance_between(geo_one, geo_two)</h1>
 
-      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/imports/import_task.ex#L8" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/postgis.ex#L13" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
 
+
+      <span class="note">(macro)</span>
+
+  </div>
+
+  <section class="docstring">
+
+<p>Calculates the distance in meters between the column in the table and a long,lat point
+given.</p>
+  </section>
+</section>
+<section class="detail" id="distance_within/3">
+
+  <div class="detail-header">
+    <a href="#distance_within/3" class="detail-link" data-no-tooltip title="Link to this macro">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this macro</span>
+    </a>
+    <h1 class="signature" translate="no">distance_within(geo_one, geo_two, distance)</h1>
+
+      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/postgis.ex#L26" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+      <span class="note">(macro)</span>
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="geo_point/2">
+
+  <div class="detail-header">
+    <a href="#geo_point/2" class="detail-link" data-no-tooltip title="Link to this macro">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this macro</span>
+    </a>
+    <h1 class="signature" translate="no">geo_point(long, lat)</h1>
+
+      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/postgis.ex#L17" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+      <span class="note">(macro)</span>
 
   </div>
 

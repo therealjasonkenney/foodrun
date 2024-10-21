@@ -21,7 +21,7 @@ defmodule Foodrun.Release do
   def seed(:san_fran, url) do
     load_app()
 
-    :ok = Foodrun.Imports.ImportTask.import_data!(:san_fran, url)
+    :ok = Foodrun.Imports.import(:san_fran, url)
   end
 
   defp repos do

@@ -1,12 +1,13 @@
 404.html
-Foodrun.FoodTrucks.FoodTruck.html
-Foodrun.FoodTrucks.SanFran.html
-Foodrun.FoodTrucks.SearchQuery.html
-Foodrun.FoodTrucks.html
+Foodrun.FoodTruckSearches.Config.html
+Foodrun.FoodTruckSearches.html
+Foodrun.Imports.FoodTruck.html
 Foodrun.Imports.ImportTask.html
+Foodrun.Imports.SanFran.html
 Foodrun.Imports.StreamDownload.html
 Foodrun.Imports.html
 Foodrun.Mailer.html
+Foodrun.Postgis.html
 Foodrun.Release.html
 Foodrun.Repo.html
 Foodrun.html
@@ -40,7 +41,7 @@ dist/lato-latin-ext-300-normal-VPGGJKJL.woff2
 dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 dist/remixicon-NKANDIL5.woff2
-dist/search_data-BCCD1BC7.js
-dist/sidebar_items-2512161E.js
+dist/search_data-FA6A1EBA.js
+dist/sidebar_items-1825BDFB.js
 index.html
 search.html

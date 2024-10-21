@@ -8,13 +8,13 @@
     <meta name="project" content="Foodrun v1.0.0">
 
 
-    <title>Foodrun.FoodTrucks.FoodTruck — Foodrun v1.0.0</title>
+    <title>Foodrun.Imports.SanFran — Foodrun v1.0.0</title>
     <link rel="stylesheet" href="dist/html-elixir-F2VRIOKR.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-K7URE6B4.js"></script>
-    <script src="dist/sidebar_items-2512161E.js"></script>
+    <script src="dist/sidebar_items-1825BDFB.js"></script>
     <script src="docs_config.js"></script>
     <script async src="dist/html-YIPIRHGU.js"></script>
 
@@ -112,19 +112,122 @@ Pages
 <div id="top-content">
   <h1>
 
-      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/food_trucks/food_truck.ex#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/imports/san_fran.ex#L1" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
 
-    <span translate="no">Foodrun.FoodTrucks.FoodTruck</span> 
+    <span translate="no">Foodrun.Imports.SanFran</span> 
     <small class="app-vsn" translate="no">(Foodrun v1.0.0)</small>
 
   </h1>
 
 
+    <section id="moduledoc">
+<p>Handles the decoding and configuration for running an import for
+the food truck data provided by San Fransisco.</p><p>Currently this only supports THIS CSV, but I organized the code this
+way so changes, especially since we don't control the csv can be easily
+maintained.</p>
+    </section>
+
 </div>
 
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Summary</span>
+    </h1>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#decode!/1" data-no-tooltip translate="no">decode!(stream)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Decodes a <a href="https://hexdocs.pm/elixir/Stream.html"><code class="inline">Stream</code></a> of data that assumes its a <a href="https://hexdocs.pm/csv/3.2.1/CSV.html"><code class="inline">CSV</code></a> into an <code class="inline">Ecto.Changset</code> for <code class="inline">Foodrun.FoodTrucks.FoodTruck</code>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#source_url/0" data-no-tooltip translate="no">source_url()</a>
+
+      </div>
+
+    </div>
+
+</div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Functions</span>
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="decode!/1">
+
+  <div class="detail-header">
+    <a href="#decode!/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">decode!(stream)</h1>
+
+      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/imports/san_fran.ex#L19" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> decode!(<a href="https://hexdocs.pm/elixir/Enumerable.html#t:t/1">Enumerable.t</a>(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>())) :: <a href="https://hexdocs.pm/elixir/Enumerable.html#t:t/1">Enumerable.t</a>(<a href="https://hexdocs.pm/ecto/3.12.3/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>())</pre>
+
+      </div>
+
+<p>Decodes a <a href="https://hexdocs.pm/elixir/Stream.html"><code class="inline">Stream</code></a> of data that assumes its a <a href="https://hexdocs.pm/csv/3.2.1/CSV.html"><code class="inline">CSV</code></a> into an <code class="inline">Ecto.Changset</code> for <code class="inline">Foodrun.FoodTrucks.FoodTruck</code>.</p>
+  </section>
+</section>
+<section class="detail" id="source_url/0">
+
+  <div class="detail-header">
+    <a href="#source_url/0" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">source_url()</h1>
+
+      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/imports/san_fran.ex#L26" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+
+    </div>
+  </section>
 
     <footer class="footer">
       <p>

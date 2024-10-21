@@ -3,8 +3,7 @@ defmodule Foodrun.Imports.ImportTask do
 
   use GenServer, restart: :transient
 
-  alias Foodrun.Imports.StreamDownload
-  alias Foodrun.FoodTrucks
+  alias Foodrun.Imports
 
   def start_link(opts) do
     GenServer.start_link(__MODULE__, opts)
@@ -16,12 +15,7 @@ defmodule Foodrun.Imports.ImportTask do
   def init(config) do
     initial_state = {config[:decoder], config[:run_at_utc_daily], config[:url]}
 
-    # Sometimes, such as in Production
-    # we might want to run this task right when we
-    # boot this.
-    if config[:run_at_startup] === true do
-      send(self(), :work)
-    else
+    if config[:run_at_utc_daily] do
       schedule_work(config[:run_at_utc_daily])
     end
 
@@ -30,35 +24,11 @@ defmodule Foodrun.Imports.ImportTask do
 
   @impl true
   def handle_info(:work, {decoder, scheduled_time, url} = state) do
-    import_data!(decoder, url)
+    Imports.import(decoder, url)
 
     schedule_work(scheduled_time)
 
     {:noreply, state}
-  end
-
-  def import_data!(decoder, url) do
-    StreamDownload.get!(url)
-    |> FoodTrucks.decode!(decoder)
-    |> FoodTrucks.import_food_trucks()
-    |> log_results(url)
-  end
-
-  defp log_results({:error, payload}, source_url) do
-    Logger.error("Unable to import records from source.",
-      error_payload: payload,
-      source_url: source_url
-    )
-
-    :ok
-  end
-
-  defp log_results(:ok, source_url) do
-    Logger.info("Records imported from source.",
-      source_url: source_url
-    )
-
-    :ok
   end
 
   defp schedule_work(false), do: :ok
