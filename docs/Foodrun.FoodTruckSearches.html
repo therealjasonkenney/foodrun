@@ -8,13 +8,13 @@
     <meta name="project" content="Foodrun v1.0.0">
 
 
-    <title>Foodrun.FoodTrucks — Foodrun v1.0.0</title>
+    <title>Foodrun.FoodTruckSearches — Foodrun v1.0.0</title>
     <link rel="stylesheet" href="dist/html-elixir-F2VRIOKR.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-K7URE6B4.js"></script>
-    <script src="dist/sidebar_items-2512161E.js"></script>
+    <script src="dist/sidebar_items-1825BDFB.js"></script>
     <script src="docs_config.js"></script>
     <script async src="dist/html-YIPIRHGU.js"></script>
 
@@ -112,12 +112,12 @@ Pages
 <div id="top-content">
   <h1>
 
-      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/food_trucks.ex#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/food_truck_searches.ex#L1" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
 
-    <span translate="no">Foodrun.FoodTrucks</span> 
+    <span translate="no">Foodrun.FoodTruckSearches</span> 
     <small class="app-vsn" translate="no">(Foodrun v1.0.0)</small>
 
   </h1>
@@ -140,24 +140,6 @@ Pages
   <h2>
     <a href="#functions">Functions</a>
   </h2>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#decode!/2" data-no-tooltip translate="no">decode!(stream, atom)</a>
-
-      </div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#import_food_trucks/1" data-no-tooltip translate="no">import_food_trucks(stream)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Imports food trucks from a <a href="https://hexdocs.pm/elixir/Stream.html"><code class="inline">Stream</code></a> within a transaction.</p></div>
-
-    </div>
 
     <div class="summary-row">
       <div class="summary-signature">
@@ -192,38 +174,16 @@ Pages
       <span class="text">Functions</span>
     </h1>
     <div class="functions-list">
-<section class="detail" id="decode!/2">
+<section class="detail" id="list_food_trucks/0">
 
   <div class="detail-header">
-    <a href="#decode!/2" class="detail-link" data-no-tooltip title="Link to this function">
+    <a href="#list_food_trucks/0" class="detail-link" data-no-tooltip title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">decode!(stream, atom)</h1>
+    <h1 class="signature" translate="no">list_food_trucks()</h1>
 
-      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/food_trucks.ex#L21" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="import_food_trucks/1">
-
-  <div class="detail-header">
-    <a href="#import_food_trucks/1" class="detail-link" data-no-tooltip title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">import_food_trucks(stream)</h1>
-
-      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/food_trucks.ex#L50" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/food_truck_searches.ex#L22" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -235,39 +195,9 @@ Pages
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> import_food_trucks(<a href="https://hexdocs.pm/elixir/Enumerable.html#t:t/1">Enumerable.t</a>(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>())) ::
-  :ok | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(), Ecto.ChangeSet.t()}</pre>
+          <pre translate="no"><span class="attribute">@spec</span> list_food_trucks() :: [Foodrun.FoodTruckSearches.FoodTruck.t()]</pre>
 
       </div>
-
-<p>Imports food trucks from a <a href="https://hexdocs.pm/elixir/Stream.html"><code class="inline">Stream</code></a> within a transaction.</p><h2 id="import_food_trucks/1-examples" class="section-heading">
-  <a href="#import_food_trucks/1-examples" class="hover-link">
-    <i class="ri-link-m" aria-hidden="true"></i>
-  </a>
-  <span class="text">Examples</span>
-</h2>
-<p>  iex&gt; import_food_trucks!(stream)
-  :ok</p>
-  </section>
-</section>
-<section class="detail" id="list_food_trucks/0">
-
-  <div class="detail-header">
-    <a href="#list_food_trucks/0" class="detail-link" data-no-tooltip title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">list_food_trucks()</h1>
-
-      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/food_trucks.ex#L34" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
 
 <p>Returns the list of food_trucks.</p><h2 id="list_food_trucks/0-examples" class="section-heading">
   <a href="#list_food_trucks/0-examples" class="hover-link">
@@ -275,8 +205,8 @@ Pages
   </a>
   <span class="text">Examples</span>
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">list_food_trucks</span><span class="p" data-group-id="9577860727-1">(</span><span class="p" data-group-id="9577860727-1">)</span><span class="w">
-</span><span class="p" data-group-id="9577860727-2">[</span><span class="p" data-group-id="9577860727-3">%</span><span class="nc" data-group-id="9577860727-3">FoodTruck</span><span class="p" data-group-id="9577860727-3">{</span><span class="p" data-group-id="9577860727-3">}</span><span class="p">,</span><span class="w"> </span><span class="n">...</span><span class="p" data-group-id="9577860727-2">]</span></code></pre>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">list_food_trucks</span><span class="p" data-group-id="1129489256-1">(</span><span class="p" data-group-id="1129489256-1">)</span><span class="w">
+</span><span class="p" data-group-id="1129489256-2">[</span><span class="p" data-group-id="1129489256-3">%</span><span class="nc" data-group-id="1129489256-3">FoodTruck</span><span class="p" data-group-id="1129489256-3">{</span><span class="p" data-group-id="1129489256-3">}</span><span class="p">,</span><span class="w"> </span><span class="n">...</span><span class="p" data-group-id="1129489256-2">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="search_food_trucks/1">
@@ -288,7 +218,7 @@ Pages
     </a>
     <h1 class="signature" translate="no">search_food_trucks(search_term)</h1>
 
-      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/food_trucks.ex#L69" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/food_truck_searches.ex#L31" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -297,6 +227,12 @@ Pages
   </div>
 
   <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> search_food_trucks(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: [Foodrun.FoodTruckSearches.FoodTruck.t()]</pre>
+
+      </div>
 
 <p>Searches food trucks and orders them by rank.</p>
   </section>

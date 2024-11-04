@@ -8,13 +8,13 @@
     <meta name="project" content="Foodrun v1.0.0">
 
 
-    <title>Foodrun.FoodTrucks.SearchQuery — Foodrun v1.0.0</title>
+    <title>Foodrun.FoodTruckSearches.Config — Foodrun v1.0.0</title>
     <link rel="stylesheet" href="dist/html-elixir-F2VRIOKR.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-K7URE6B4.js"></script>
-    <script src="dist/sidebar_items-2512161E.js"></script>
+    <script src="dist/sidebar_items-1825BDFB.js"></script>
     <script src="docs_config.js"></script>
     <script async src="dist/html-YIPIRHGU.js"></script>
 
@@ -112,12 +112,12 @@ Pages
 <div id="top-content">
   <h1>
 
-      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/food_trucks/search_query.ex#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/food_truck_searches/config.ex#L1" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
 
-    <span translate="no">Foodrun.FoodTrucks.SearchQuery</span> 
+    <span translate="no">Foodrun.FoodTruckSearches.Config</span> 
     <small class="app-vsn" translate="no">(Foodrun v1.0.0)</small>
 
   </h1>
@@ -132,6 +132,20 @@ Pages
       </a>
       <span class="text">Summary</span>
     </h1>
+<div class="summary-types summary">
+  <h2>
+    <a href="#types">Types</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:t/0" data-no-tooltip translate="no">t()</a>
+
+      </div>
+
+    </div>
+
+</div>
 <div class="summary-functions summary">
   <h2>
     <a href="#functions">Functions</a>
@@ -139,39 +153,7 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#active/0" data-no-tooltip translate="no">active()</a>
-
-      </div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#active_and_near/1" data-no-tooltip translate="no">active_and_near(map)</a>
-
-      </div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#filter_by_search_term/2" data-no-tooltip translate="no">filter_by_search_term(query, search_term)</a>
-
-      </div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#sort_by_name/1" data-no-tooltip translate="no">sort_by_name(query)</a>
-
-      </div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#sort_by_search_ranking/2" data-no-tooltip translate="no">sort_by_search_ranking(query, search_term)</a>
+        <a href="#load/0" data-no-tooltip translate="no">load()</a>
 
       </div>
 
@@ -182,6 +164,50 @@ Pages
   </section>
 
 
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Types</span>
+    </h1>
+    <div class="types-list">
+<section class="detail" id="t:t/0">
+
+  <div class="detail-header">
+    <a href="#t:t/0" class="detail-link" data-no-tooltip title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">t()</h1>
+
+      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/food_truck_searches/config.ex#L6" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> t() :: %Foodrun.FoodTruckSearches.Config{
+  max_distance_meters: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">float</a>(),
+  max_trucks_shown: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(),
+  origin: {<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">float</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">float</a>()}
+}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+
+    </div>
+  </section>
+
   <section id="functions" class="details-list">
     <h1 class="section-heading">
       <a class="hover-link" href="#functions">
@@ -190,104 +216,16 @@ Pages
       <span class="text">Functions</span>
     </h1>
     <div class="functions-list">
-<section class="detail" id="active/0">
+<section class="detail" id="load/0">
 
   <div class="detail-header">
-    <a href="#active/0" class="detail-link" data-no-tooltip title="Link to this function">
+    <a href="#load/0" class="detail-link" data-no-tooltip title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">active()</h1>
+    <h1 class="signature" translate="no">load()</h1>
 
-      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/food_trucks/search_query.ex#L6" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="active_and_near/1">
-
-  <div class="detail-header">
-    <a href="#active_and_near/1" class="detail-link" data-no-tooltip title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">active_and_near(map)</h1>
-
-      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/food_trucks/search_query.ex#L11" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="filter_by_search_term/2">
-
-  <div class="detail-header">
-    <a href="#filter_by_search_term/2" class="detail-link" data-no-tooltip title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">filter_by_search_term(query, search_term)</h1>
-
-      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/food_trucks/search_query.ex#L24" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="sort_by_name/1">
-
-  <div class="detail-header">
-    <a href="#sort_by_name/1" class="detail-link" data-no-tooltip title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">sort_by_name(query)</h1>
-
-      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/food_trucks/search_query.ex#L33" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="sort_by_search_ranking/2">
-
-  <div class="detail-header">
-    <a href="#sort_by_search_ranking/2" class="detail-link" data-no-tooltip title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">sort_by_search_ranking(query, search_term)</h1>
-
-      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/food_trucks/search_query.ex#L38" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/food_truck_searches/config.ex#L12" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>

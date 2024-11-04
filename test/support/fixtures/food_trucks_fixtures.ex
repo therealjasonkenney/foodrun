@@ -1,15 +1,18 @@
 defmodule Foodrun.FoodTrucksFixtures do
   @moduledoc """
   This module defines test helpers for creating
-  entities via the `Foodrun.FoodTrucks` context.
+  entities via the `Foodrun.Imports` context.
   """
+
+  alias Foodrun.Imports.FoodTruck
+  alias Foodrun.Repo
 
   @doc """
   Generate a food_truck.
   """
-  def food_truck_fixture(attrs \\ %{}) do
-    {:ok, food_truck} =
-      attrs
+  def food_truck_fixture(merge_attrs \\ %{}) do
+    attrs =
+      merge_attrs
       |> Enum.into(%{
         active: true,
         address: "Some Address",
@@ -20,7 +23,10 @@ defmodule Foodrun.FoodTrucksFixtures do
         menu: "Hot dogs: condiments: soft pretzels.",
         schedule_url: "https://www.example.com/foo.pdf"
       })
-      |> Foodrun.FoodTrucks.create_food_truck()
+
+    {:ok, food_truck} =
+      Ecto.Changeset.cast(%FoodTruck{}, attrs, FoodTruck.__schema__(:fields))
+      |> Repo.insert()
 
     food_truck
   end
@@ -37,7 +43,7 @@ defmodule Foodrun.FoodTrucksFixtures do
         menu: "Hot dogs: condiments: soft pretzels.",
         schedule_url: "https://www.example.com/foo.pdf"
       })
-      |> Foodrun.FoodTrucks.FoodTruck.new_changeset()
+      |> FoodTruck.new_changeset()
 
     stream
     |> Stream.concat([food_truck])

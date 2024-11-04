@@ -1,5 +1,5 @@
-defmodule Foodrun.FoodTrucks.SanFran do
-  alias Foodrun.FoodTrucks.FoodTruck
+defmodule Foodrun.Imports.SanFran do
+  alias Foodrun.Imports.FoodTruck
 
   require Logger
 

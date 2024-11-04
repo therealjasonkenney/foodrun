@@ -8,13 +8,13 @@
     <meta name="project" content="Foodrun v1.0.0">
 
 
-    <title>Foodrun.FoodTrucks.SanFran — Foodrun v1.0.0</title>
+    <title>Foodrun.Imports.FoodTruck — Foodrun v1.0.0</title>
     <link rel="stylesheet" href="dist/html-elixir-F2VRIOKR.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-K7URE6B4.js"></script>
-    <script src="dist/sidebar_items-2512161E.js"></script>
+    <script src="dist/sidebar_items-1825BDFB.js"></script>
     <script src="docs_config.js"></script>
     <script async src="dist/html-YIPIRHGU.js"></script>
 
@@ -112,23 +112,16 @@ Pages
 <div id="top-content">
   <h1>
 
-      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/food_trucks/san_fran.ex#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/imports/food_truck.ex#L1" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
 
-    <span translate="no">Foodrun.FoodTrucks.SanFran</span> 
+    <span translate="no">Foodrun.Imports.FoodTruck</span> 
     <small class="app-vsn" translate="no">(Foodrun v1.0.0)</small>
 
   </h1>
 
-
-    <section id="moduledoc">
-<p>Handles the decoding and configuration for running an import for
-the food truck data provided by San Fransisco.</p><p>Currently this only supports THIS CSV, but I organized the code this
-way so changes, especially since we don't control the csv can be easily
-maintained.</p>
-    </section>
 
 </div>
 
@@ -139,6 +132,28 @@ maintained.</p>
       </a>
       <span class="text">Summary</span>
     </h1>
+<div class="summary-types summary">
+  <h2>
+    <a href="#types">Types</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:stream/0" data-no-tooltip translate="no">stream()</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:t/0" data-no-tooltip translate="no">t()</a>
+
+      </div>
+
+    </div>
+
+</div>
 <div class="summary-functions summary">
   <h2>
     <a href="#functions">Functions</a>
@@ -146,19 +161,11 @@ maintained.</p>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#decode!/1" data-no-tooltip translate="no">decode!(stream)</a>
+        <a href="#active?/1" data-no-tooltip translate="no">active?(active \\ true)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Decodes a <a href="https://hexdocs.pm/elixir/Stream.html"><code class="inline">Stream</code></a> of data that assumes its a <a href="https://hexdocs.pm/csv/3.2.1/CSV.html"><code class="inline">CSV</code></a> into an <code class="inline">Ecto.Changset</code> for <a href="Foodrun.FoodTrucks.FoodTruck.html"><code class="inline">Foodrun.FoodTrucks.FoodTruck</code></a>.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#source_url/0" data-no-tooltip translate="no">source_url()</a>
-
-      </div>
+        <div class="summary-synopsis"><p>Builds a query that filters on active.</p></div>
 
     </div>
 
@@ -167,24 +174,24 @@ maintained.</p>
   </section>
 
 
-  <section id="functions" class="details-list">
+  <section id="types" class="details-list">
     <h1 class="section-heading">
-      <a class="hover-link" href="#functions">
+      <a class="hover-link" href="#types">
         <i class="ri-link-m" aria-hidden="true"></i>
       </a>
-      <span class="text">Functions</span>
+      <span class="text">Types</span>
     </h1>
-    <div class="functions-list">
-<section class="detail" id="decode!/1">
+    <div class="types-list">
+<section class="detail" id="t:stream/0">
 
   <div class="detail-header">
-    <a href="#decode!/1" class="detail-link" data-no-tooltip title="Link to this function">
+    <a href="#t:stream/0" class="detail-link" data-no-tooltip title="Link to this type">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
+      <span class="sr-only">Link to this type</span>
     </a>
-    <h1 class="signature" translate="no">decode!(stream)</h1>
+    <h1 class="signature" translate="no">stream()</h1>
 
-      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/food_trucks/san_fran.ex#L19" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/imports/food_truck.ex#L34" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -196,23 +203,23 @@ maintained.</p>
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> decode!(<a href="https://hexdocs.pm/elixir/Enumerable.html#t:t/1">Enumerable.t</a>(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>())) :: <a href="https://hexdocs.pm/elixir/Enumerable.html#t:t/1">Enumerable.t</a>(<a href="https://hexdocs.pm/ecto/3.12.3/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>())</pre>
+          <pre translate="no"><span class="attribute">@type</span> stream() :: <a href="https://hexdocs.pm/elixir/Enumerable.html#t:t/1">Enumerable.t</a>(Changeset.t(<a href="#t:t/0">t</a>()))</pre>
 
       </div>
 
-<p>Decodes a <a href="https://hexdocs.pm/elixir/Stream.html"><code class="inline">Stream</code></a> of data that assumes its a <a href="https://hexdocs.pm/csv/3.2.1/CSV.html"><code class="inline">CSV</code></a> into an <code class="inline">Ecto.Changset</code> for <a href="Foodrun.FoodTrucks.FoodTruck.html"><code class="inline">Foodrun.FoodTrucks.FoodTruck</code></a>.</p>
+
   </section>
 </section>
-<section class="detail" id="source_url/0">
+<section class="detail" id="t:t/0">
 
   <div class="detail-header">
-    <a href="#source_url/0" class="detail-link" data-no-tooltip title="Link to this function">
+    <a href="#t:t/0" class="detail-link" data-no-tooltip title="Link to this type">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
+      <span class="sr-only">Link to this type</span>
     </a>
-    <h1 class="signature" translate="no">source_url()</h1>
+    <h1 class="signature" translate="no">t()</h1>
 
-      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/food_trucks/san_fran.ex#L26" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/imports/food_truck.ex#L22" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -222,7 +229,71 @@ maintained.</p>
 
   <section class="docstring">
 
+      <div class="specs">
 
+          <pre translate="no"><span class="attribute">@type</span> t() :: %Foodrun.Imports.FoodTruck{
+  __meta__: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  active: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>() | nil,
+  address: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
+  external_id: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil,
+  id: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil,
+  inserted_at: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  lat: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">float</a>() | nil,
+  long: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">float</a>() | nil,
+  menu: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
+  name: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
+  schedule_url: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
+  updated_at: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
+}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+
+    </div>
+  </section>
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Functions</span>
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="active?/1">
+
+    <span id="active?/0"></span>
+
+  <div class="detail-header">
+    <a href="#active?/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">active?(active \\ true)</h1>
+
+      <a href="https://github.com/therealjasonkenney/foodrun/blob/main/lib/foodrun/imports/food_truck.ex#L45" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> active?(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()) :: <a href="https://hexdocs.pm/ecto/3.12.3/Ecto.Query.html#t:t/0">Ecto.Query.t</a>()</pre>
+
+      </div>
+
+<p>Builds a query that filters on active.</p><p>Foodtrucks that are active are the ones by default displayed to the user.
+When importing records in <code class="inline">food_trucks</code>, <code class="inline">active</code> is set to <code class="inline">false</code> by default, so that
+if any errors happen while inserting many records (via a stream), we can roll the thing back
+without needing a transaction for 1000s of records at once.</p>
   </section>
 </section>
 
